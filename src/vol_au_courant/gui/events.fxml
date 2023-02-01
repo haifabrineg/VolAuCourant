@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<TabPane prefHeight="774.0" prefWidth="1058.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vol_au_courant.gui.EventsController">
+   <tabs>
+      <Tab id="camping" fx:id="cpage" closable="false" onSelectionChanged="#camping" text="camping ">
+         <content>
+            <AnchorPane id="AnchorPane" prefHeight="734.0" prefWidth="1094.0">
+               <children>
+                  <Button fx:id="bserach" layoutX="738.0" layoutY="184.0" mnemonicParsing="false" onAction="#search" text="chercher" />
+                  <TextField fx:id="tfsearchc" layoutX="469.0" layoutY="184.0" onAction="#searchc" />
+                  <Pane prefHeight="734.0" prefWidth="266.0" style="-fx-background-color: #DAF7A6;">
+                     <children>
+                        <Button fx:id="binsert" layoutX="135.0" layoutY="219.0" mnemonicParsing="false" onAction="#insert" prefHeight="43.0" prefWidth="112.0" text="ajouter" />
+                        <Button fx:id="bupdate" layoutX="133.0" layoutY="282.0" mnemonicParsing="false" onAction="#update" prefHeight="44.0" prefWidth="115.0" text="modifier" />
+                        <Button fx:id="bdelete" layoutX="134.0" layoutY="345.0" mnemonicParsing="false" onAction="#delete" prefHeight="45.0" prefWidth="114.0" text="supprimer" />
+                        <TextField fx:id="tfidupdelc" layoutX="16.0" layoutY="326.0" prefHeight="31.0" prefWidth="104.0" />
+                     </children>
+                  </Pane>
+                  <Label layoutX="295.0" layoutY="23.0" text="date debut " />
+                  <Label layoutX="295.0" layoutY="60.0" text="date fin " />
+                  <Label layoutX="295.0" layoutY="97.0" text="prix" />
+                  <Label layoutX="295.0" layoutY="135.0" text="age min " />
+                  <Label layoutX="628.0" layoutY="23.0" text="age max" />
+                  <Label layoutX="628.0" layoutY="60.0" text="equipements " />
+                  <Label layoutX="628.0" layoutY="97.0" text="lieu depart" />
+                  <TextField fx:id="tfddc" layoutX="397.0" layoutY="18.0" onAction="#ddebcamp" />
+                  <TextField fx:id="tfamaxc" layoutX="789.0" layoutY="18.0" onAction="#amxc" />
+                  <TextField fx:id="tfdfc" layoutX="397.0" layoutY="55.0" onAction="#dfincamp" />
+                  <TextField fx:id="tfprixc" layoutX="397.0" layoutY="92.0" onAction="#prixc" />
+                  <TextField fx:id="tfamc" layoutX="397.0" layoutY="130.0" onAction="#amcamp" />
+                  <TextField fx:id="tfldc" layoutX="789.0" layoutY="92.0" onAction="#ldepc" />
+                  <TextField fx:id="tfeqc" layoutX="789.0" layoutY="55.0" onAction="#eqcamp" />
+                  <TextField fx:id="tflac" layoutX="789.0" layoutY="130.0" onAction="#lac" />
+                  <Label layoutX="632.0" layoutY="135.0" text="lieu arrive" />
+                  <TableView fx:id="camptable" layoutX="275.0" layoutY="293.0" prefHeight="340.0" prefWidth="714.0">
+                    <columns>
+                      <TableColumn fx:id="id_event" minWidth="100.0" prefWidth="75.0" text="id event" />
+                      <TableColumn fx:id="date_debut" minWidth="100.0" prefWidth="75.0" text="date debut" />
+                        <TableColumn fx:id="date_fin" minWidth="100.0" prefWidth="75.0" text="date fin" />
+                        <TableColumn fx:id="prix" minWidth="100.0" prefWidth="75.0" text="prix" />
+                        <TableColumn fx:id="age_min" minWidth="100.0" prefWidth="75.0" text="age min" />
+                        <TableColumn fx:id="age_max" minWidth="100.0" prefWidth="75.0" text="age max " />
+                        <TableColumn fx:id="equipements" minWidth="100.0" prefWidth="75.0" text="equipements" />
+                        <TableColumn fx:id="lieu_depart" minWidth="100.0" prefWidth="75.0" text="lieu depart" />
+                        <TableColumn fx:id="lieu_arrive" minWidth="100.0" prefWidth="75.0" text="lieu arrivé" />
+                        <TableColumn fx:id="lieu_arrive1" minWidth="100.0" prefWidth="75.0" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab id="rendonnée" text="rendonnée">
+         <content>
+            <AnchorPane id="AnchorPane" prefHeight="734.0" prefWidth="1094.0">
+               <children>
+                  <Button fx:id="bserachr" layoutX="721.0" layoutY="201.0" mnemonicParsing="false" onAction="#searchr" text="chercher" />
+                  <TextField fx:id="tfsearchr" layoutX="494.0" layoutY="201.0" onAction="#searchr" />
+                  <ScrollPane layoutX="305.0" layoutY="242.0" prefHeight="373.0" prefWidth="624.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="375.0" prefWidth="627.0">
+                           <children>
+                              <TreeTableView fx:id="tvr" prefHeight="362.0" prefWidth="627.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TreeTableColumn fx:id="idr" minWidth="100.0" prefWidth="37.000030517578125" text="id_event" />
+                                    <TreeTableColumn fx:id="dbr" minWidth="100.0" prefWidth="30.0" text="date_debut" />
+                                    <TreeTableColumn fx:id="pr" minWidth="100.0" prefWidth="20.0" text="prix" />
+                                    <TreeTableColumn fx:id="amr" minWidth="100.0" prefWidth="25.0" text="age_min" />
+                                    <TreeTableColumn fx:id="amr" minWidth="100.0" prefWidth="43.0" text="age_max" />
+                                    <TreeTableColumn fx:id="ldr" minWidth="100.0" prefWidth="43.0" text="lieu_depart" />
+                                    <TreeTableColumn fx:id="lar" minWidth="100.0" prefWidth="73.0" text="lieu_arrive" />
+                                    <TreeTableColumn fx:id="eqr" minWidth="100.0" text="equipements " />
+                                    <TreeTableColumn fx:id="mtr" minWidth="100.0" prefWidth="52.0" text="moyen transport" />
+                                 </columns>
+                              </TreeTableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+                  <Pane prefHeight="734.0" prefWidth="266.0" style="-fx-background-color: #DAF7A6;">
+                     <children>
+                        <Button fx:id="binsertr" layoutX="140.0" layoutY="176.0" mnemonicParsing="false" onAction="#insertr" prefHeight="49.0" prefWidth="104.0" text="ajouter" />
+                        <Button fx:id="bupdater" layoutX="138.0" layoutY="249.0" mnemonicParsing="false" onAction="#updater" prefHeight="49.0" prefWidth="108.0" text="modifier" />
+                        <Button layoutX="140.0" layoutY="318.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="105.0" text="supprimer" />
+                        <TextField fx:id="tfidupde" layoutX="14.0" layoutY="298.0" onAction="#idupdelr" prefHeight="31.0" prefWidth="109.0" />
+                     </children>
+                  </Pane>
+                  <Label layoutX="287.0" layoutY="25.0" text="date debut " />
+                  <Label layoutX="707.0" layoutY="68.0" text="lieu arrive" />
+                  <TextField fx:id="tflar" layoutX="840.0" layoutY="63.0" onAction="#lar" />
+                  <TextField fx:id="tfeqr" layoutX="840.0" layoutY="20.0" onAction="#eqren" />
+                  <TextField fx:id="tfprixr" layoutX="840.0" layoutY="146.0" onAction="#prixr" />
+                  <Label layoutX="734.0" layoutY="151.0" text="prix" />
+                  <Label layoutX="658.0" layoutY="25.0" text="equipements rendonnée" />
+                  <TextField fx:id="tfddr" layoutX="463.0" layoutY="20.0" onAction="#ddebren" />
+                  <Label layoutX="297.0" layoutY="108.0" text="age min " />
+                  <TextField fx:id="tfamr" layoutX="463.0" layoutY="103.0" onAction="#amren" />
+                  <TextField fx:id="tfamaxr" layoutX="463.0" layoutY="141.0" onAction="#amxr" />
+                  <Label layoutX="298.0" layoutY="146.0" text="age max" />
+                  <Label layoutX="272.0" layoutY="55.0" prefHeight="46.0" prefWidth="204.0" text="moyen transport rendonnée" />
+                  <TextField fx:id="tfmtr" layoutX="463.0" layoutY="63.0" onAction="#mtr" />
+                  <TextField fx:id="tfldr" layoutX="840.0" layoutY="103.0" onAction="#ldepr" />
+                  <Label layoutX="704.0" layoutY="108.0" text="lieu depart" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab id="tour" closable="false" text="tour">
+         <content>
+            <AnchorPane id="AnchorPane" prefHeight="734.0" prefWidth="1094.0">
+               <children>
+                  <Button fx:id="bseracht" layoutX="699.0" layoutY="199.0" mnemonicParsing="false" onAction="#searcht" text="chercher" />
+                  <TextField fx:id="tfsearcht" layoutX="492.0" layoutY="199.0" onAction="#searcht" />
+                  <ScrollPane layoutX="305.0" layoutY="242.0" prefHeight="373.0" prefWidth="624.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="375.0" prefWidth="627.0">
+                           <children>
+                              <TreeTableView fx:id="tvt" prefHeight="362.0" prefWidth="627.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TreeTableColumn fx:id="idt" minWidth="100.0" prefWidth="37.000030517578125" text="id_event" />
+                                    <TreeTableColumn fx:id="ddt" minWidth="100.0" prefWidth="30.0" text="date_debut" />
+                                    <TreeTableColumn fx:id="pt" minWidth="100.0" prefWidth="20.0" text="prix" />
+                                    <TreeTableColumn fx:id="amt" minWidth="100.0" prefWidth="25.0" text="age_min" />
+                                    <TreeTableColumn fx:id="amxt" minWidth="100.0" prefWidth="43.0" text="age_max" />
+                                    <TreeTableColumn fx:id="ldt" minWidth="100.0" prefWidth="43.0" text="lieu_depart" />
+                                    <TreeTableColumn fx:id="lat" minWidth="100.0" prefWidth="73.0" text="lieu_arrive" />
+                                    <TreeTableColumn fx:id="mtt" minWidth="100.0" prefWidth="52.0" text="moyen transport" />
+                                    <TreeTableColumn fx:id="st" minWidth="100.0" prefWidth="16.0" text="sites principeaux" />
+                                 </columns>
+                              </TreeTableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+                  <Pane prefHeight="734.0" prefWidth="266.0" style="-fx-background-color: #DAF7A6;">
+                     <children>
+                        <Button fx:id="binsertt" layoutX="150.0" layoutY="204.0" mnemonicParsing="false" onAction="#insertt" prefHeight="48.0" prefWidth="102.0" text="ajouter" />
+                        <Button fx:id="bupdatet" layoutX="150.0" layoutY="271.0" mnemonicParsing="false" onAction="#updatet" prefHeight="52.0" prefWidth="100.0" text="modifier" />
+                        <Button fx:id="bdeletet" layoutX="151.0" layoutY="340.0" mnemonicParsing="false" onAction="#deletet" prefHeight="55.0" prefWidth="99.0" text="supprimer" />
+                        <TextField fx:id="tfidupdel" layoutX="14.0" layoutY="323.0" onAction="#idupdelt" prefHeight="31.0" prefWidth="127.0" />
+                     </children>
+                  </Pane>
+                  <Label layoutX="326.0" layoutY="29.0" text="date" />
+                  <Label layoutX="286.0" layoutY="153.0" text="sites principeaux" />
+                  <Label layoutX="669.0" layoutY="19.0" text="age min " />
+                  <Label layoutX="671.0" layoutY="59.0" text="age max" />
+                  <Label layoutX="642.0" layoutY="100.0" text="moyen transport" />
+                  <Label layoutX="305.0" layoutY="70.0" text="lieu depart" />
+                  <TextField fx:id="tfddt" layoutX="422.0" layoutY="24.0" onAction="#ddebtour" />
+                  <TextField fx:id="tfamaxt" layoutX="776.0" layoutY="54.0" onAction="#amxt" />
+                  <TextField fx:id="tfamt" layoutX="776.0" layoutY="14.0" onAction="#amt" />
+                  <TextField fx:id="tfldt" layoutX="422.0" layoutY="65.0" onAction="#ldept" />
+                  <TextField fx:id="tflact" layoutX="422.0" layoutY="105.0" onAction="#lat" />
+                  <Label layoutX="309.0" layoutY="110.0" text="lieu arrive" />
+                  <TextField fx:id="tfmtt" layoutX="776.0" layoutY="95.0" onAction="#mtt" />
+                  <TextField fx:id="tfspt" layoutX="422.0" layoutY="148.0" onAction="#spt" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>
